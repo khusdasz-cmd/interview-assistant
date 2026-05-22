@@ -1,0 +1,23 @@
+[api]
+key = "your-api-key-here"
+model = "deepseek-chat"
+url = "https://api.deepseek.com"
+
+[audio]
+whisper_model = "base"
+energy_threshold = 25
+user_speech_energy = 800
+
+[app]
+default_ptt = true
+
+[prompts]
+mock_role = "你是面试官，负责对候选人进行结构化面试"
+mock_rules = """- 前 3 题围绕 JD 核心要求
+- 中 2 题结合候选人经历与 JD 的匹配点
+- 最后 1 题行为面试（STAR）
+- 每个问题要自然、口语化，像真实面试官在提问
+- 输出格式：每行一个问题，不要编号前缀以外的内容"""
+
+assist_role = "你是面试辅助助手。根据用户的真实项目经历和面试情景，给出参考回答。"
+assist_rules = "基于用户经历不编造、贴合公司岗位、口语化、200字以内"

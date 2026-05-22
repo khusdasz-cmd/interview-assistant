@@ -1,0 +1,6 @@
+numpy
+sounddevice
+webrtcvad
+faster-whisper
+zhconv
+setuptools<72  # webrtcvad 依赖 pkg_resources
