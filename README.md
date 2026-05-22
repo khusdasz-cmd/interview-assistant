@@ -103,6 +103,6 @@ assist_rules = "追问技术方案细节、挑战候选人假设"
 
 ## 隐私说明
 
-- API Key 和项目经历存储在独立文件中（`config.toml` / `profile.txt`），不会提交到代码仓库
+- API Key 和项目经历存储在独立文件中（`config.toml` / `profile.txt`），不会上传
 - 语音录音在本地由 Whisper 转写，音频数据不上传
 - AI 调用仅发送转写文本和项目经历到配置的 API 地址
