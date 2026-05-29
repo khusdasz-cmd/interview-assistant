@@ -1,5 +1,7 @@
 # 面试助手 v2
 
+[![CI](https://github.com/khusdasz-cmd/interview-assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/khusdasz-cmd/interview-assistant/actions/workflows/ci.yml)
+
 双模式面试辅助工具：模拟面试 + 实战辅助。语音识别转写 + AI 生成参考回答。
 
 ## 功能
@@ -91,14 +93,28 @@ assist_rules = "追问技术方案细节、挑战候选人假设"
 
 ```
 面试助手/
-├── start.bat                    # 一键启动
-├── requirements.txt             # Python 依赖
-├── config.toml                  # 配置文件（API Key、身份设定等）
-├── config.example.toml          # 配置模板
-├── interview-assistant.py       # 主程序
-├── profile.txt                  # 个人项目经历
-├── profile.example.txt          # 个人信息模板
-└── .gitignore                   # Git 忽略规则
+├── start.bat                            # 一键启动
+├── requirements.txt                     # Python 依赖
+├── pyproject.toml                       # 项目元数据
+├── config.toml                          # 配置文件（API Key、身份设定等）
+├── config.example.toml                  # 配置模板
+├── interview-assistant.py               # 兼容入口
+├── interview_assistant/                 # Python 包
+│   ├── __init__.py                      # 版本信息
+│   ├── __main__.py                      # 入口: python -m interview_assistant
+│   ├── config.py                        # 配置加载与常量
+│   ├── llm.py                           # LLM API 调用
+│   ├── audio.py                         # 音频捕获、VAD 录音
+│   ├── transcriber.py                   # Whisper 语音转写
+│   └── app.py                           # Tkinter 主界面
+├── tests/                               # 自动化测试
+│   ├── test_config.py
+│   ├── test_llm.py
+│   └── test_audio.py
+├── profile.txt                          # 个人项目经历
+├── profile.example.txt                  # 个人信息模板
+├── .github/workflows/ci.yml             # CI 配置
+└── .gitignore                           # Git 忽略规则
 ```
 
 ## 隐私说明
